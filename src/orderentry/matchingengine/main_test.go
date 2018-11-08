@@ -27,18 +27,18 @@ func TestBehavior(t *testing.T) {
     }()
 
     // Should all go into the book
-    ob.AddOrder(&Order{isBuy:false,id:1,price:50,amount:50})
-    ob.AddOrder(&Order{isBuy:false,id:2,price:45,amount:25})
-    ob.AddOrder(&Order{isBuy:false,id:3,price:45,amount:25})
+    ob.AddOrder(&Order{isBuy:false,id:1,price:50,volume:50})
+    ob.AddOrder(&Order{isBuy:false,id:2,price:45,volume:25})
+    ob.AddOrder(&Order{isBuy:false,id:3,price:45,volume:25})
     // Should trigger three fills, two partial at 45 and one at 50
-    ob.AddOrder(&Order{isBuy:true,id:4,price:55,amount:75})
+    ob.AddOrder(&Order{isBuy:true,id:4,price:55,volume:75})
     // Should cancel immediately
     ob.CancelOrder(1)
     // Should all go into the book
-    ob.AddOrder(&Order{isBuy:true,id:5,price:55,amount:20})
-    ob.AddOrder(&Order{isBuy:true,id:6,price:50,amount:15})
+    ob.AddOrder(&Order{isBuy:true,id:5,price:55,volume:20})
+    ob.AddOrder(&Order{isBuy:true,id:6,price:50,volume:15})
     // Should trigger two fills, one partial at 55 and one at 50
-    ob.AddOrder(&Order{isBuy:false,id:7,price:45,amount:25})
+    ob.AddOrder(&Order{isBuy:false,id:7,price:45,volume:25})
     ob.Done()
 
     <-done
