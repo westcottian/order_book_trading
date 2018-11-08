@@ -75,8 +75,6 @@ func NewOrderBook(actions chan<- *Action) *OrderBook {
 }
 
 func (ob *OrderBook) AddOrder(o *Order) {
-
-	tm := time.Now()
 	//go bx.TimeLimitHandler(o)
     // Try to fill immediately
     if o.isBuy {
