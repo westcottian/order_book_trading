@@ -54,5 +54,10 @@ Standard Points:
         CANCEL - Order: 1
         CANCELLED - Order: 1
         DONE
+        
+   6. To run the test cases, do as below:
+    
+    cd order_book_trading\src\orderentry
+    go test
 
 
