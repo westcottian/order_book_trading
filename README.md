@@ -57,7 +57,7 @@ Standard Points:
         
    6. To run the test cases, do as below:
     
-    cd order_book_trading\src\orderentry
+    cd order_book_trading/src/orderentry/matchingengine
     go test
 
 
