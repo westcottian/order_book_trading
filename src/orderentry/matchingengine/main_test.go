@@ -74,7 +74,7 @@ func buildOrders(n int, priceMean, priceStd float64, maxAmount int32) []*Order {
             id: uint64(i)+1,
             isBuy: float64(price) >= priceMean,
             price: price,
-            amount: uint32(rand.Int31n(maxAmount)),
+            volume: uint32(rand.Int31n(maxAmount)),
         })
     }
     return orders
